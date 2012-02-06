@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.new(params[:subscription])
     if @subscription.save_with_payment
-      redirect_to @subscription, :notice => "Thank you for subscribing!"
+      redirect_to @subscription, :notice => "Thank you for subscribing, you rock!"
     else
       render :new
     end
