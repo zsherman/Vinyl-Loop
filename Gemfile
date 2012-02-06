@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 gem 'pg'
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -15,3 +16,4 @@ gem 'jquery-rails'
 
 gem 'stripe'
 
+gem 'rack', '1.3.3'
