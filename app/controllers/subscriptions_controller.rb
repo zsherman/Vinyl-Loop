@@ -9,7 +9,7 @@ class SubscriptionsController < ApplicationController
     if @subscription.save_with_payment
       redirect_to @subscription, :notice => "Thank you for subscribing, you rock!"
     else
-      render :new
+      render :new 
     end
   end
 
