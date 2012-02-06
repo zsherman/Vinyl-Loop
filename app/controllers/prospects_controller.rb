@@ -10,9 +10,11 @@ class ProspectsController < ApplicationController
   def create
     @prospect = Prospect.new(params[:prospect])
     if @prospect.save
-      redirect_to root_path, :notice => "Thanks! We'll try to get you an invite code soon."
+      flash[:notice] = "Thanks! We'll let you know when spots open up."
+      redirect_to "/home"
     else
-      redirect_to root_path, :notice => "This is embarrassing, something went wrong."
+      flash[:notice] = "Sorry, something went wrong."
+      redirect_to root_path
     end
   end
   
@@ -20,5 +22,6 @@ class ProspectsController < ApplicationController
     @prospect = Prospect.find(params[:id])
     @prospect.destroy
     flash[:notice] = "Prospect has been destroyed."
+    redirect_to root_path
   end
 end

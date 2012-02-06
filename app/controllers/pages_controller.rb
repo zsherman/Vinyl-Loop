@@ -1,9 +1,7 @@
 class PagesController < ApplicationController
   def home
      @title = "Home"
-     if user_signed_in?
-     end
-   end
+  end
 
    def contact
      @title = "Contact"
@@ -19,7 +17,5 @@ class PagesController < ApplicationController
 
    def dashboard
      @title = "Dashboard"
-     if user_signed_in?
-     end
    end
 end
