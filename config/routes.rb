@@ -6,6 +6,7 @@ Saas::Application.routes.draw do
   resources :plans
   resources :pages
   resources :prospects
+  resources :users
   match '/home', :to => 'pages#home'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'

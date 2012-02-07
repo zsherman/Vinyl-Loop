@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120206071856) do
+ActiveRecord::Schema.define(:version => 20120207074633) do
 
   create_table "codes", :force => true do |t|
     t.string   "invite_code"
@@ -37,10 +37,16 @@ ActiveRecord::Schema.define(:version => 20120206071856) do
   create_table "subscriptions", :force => true do |t|
     t.integer  "plan_id"
     t.string   "email"
+    t.string   "stripe_customer_token"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "stripe_customer_token"
   end
+
+  add_index "subscriptions", ["plan_id", "user_id"], :name => "index_subscriptions_on_plan_id_and_user_id", :unique => true
+  add_index "subscriptions", ["plan_id"], :name => "index_subscriptions_on_plan_id"
+  add_index "subscriptions", ["stripe_customer_token"], :name => "index_subscriptions_on_stripe_customer_token"
+  add_index "subscriptions", ["user_id"], :name => "index_subscriptions_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -56,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20120206071856) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "invite_code"
+    t.integer  "plan_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
