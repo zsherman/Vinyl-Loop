@@ -94,3 +94,39 @@ form .field, form .actions {
 .error_messages ul {
   margin: 15px 0;
 }
+
+/* Navigation */
+
+nav {
+	margin-top: 5px;
+	float: right;
+	color: blue;
+}
+
+nav {
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  font-size: 50%;
+}
+
+nav ul li a {
+  padding: 6px 8px 6px 8px;
+  color: blue;
+  font: 13px Verdana,sans-serif;
+}
+
+nav ul li a:hover {
+  	text-decoration: underline;
+	
+}
+
