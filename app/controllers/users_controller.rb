@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
   
   def dashboard
-    @plan = current_user.plan
+    @user_plan = current_user.plan
+    @plans = Plan.all
   end
   
 end

@@ -2,8 +2,6 @@ class SubscriptionsController < ApplicationController
   def new
     plan = Plan.find(params[:plan_id])
     @subscription = plan.subscriptions.build
-    current_user.plan_id = @subscription.plan_id
-    current_user.save
   end
 
   def create

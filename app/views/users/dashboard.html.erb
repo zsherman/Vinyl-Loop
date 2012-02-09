@@ -1,8 +1,17 @@
-<%= @plan.name %>
+<%= @user_plan.name %>
 
 List Plan Links Here:
+<br></br>
+<% @plans.each do |plan| %>
+	<% if plan == @user_plan%>
+		<br><%= "Your signed up for the " + plan.name + " plan."%></br>
+	<% else %>
+	<br><%= link_to plan.name, new_subscription_path(:plan_id => plan.id)%></br>
+	<% end %>
+<% end %>
 
+<br></br>
 1. Link on index page for example:
-2. <%= link_to "Sign up", new_subscription_path(:plan_id => @plan.id) %>
+2. <%= link_to "Sign up", new_subscription_path(:plan_id => @user_plan.id) %>
 3. Show if the plan is the existing user's plan
 4.
