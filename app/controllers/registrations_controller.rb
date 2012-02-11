@@ -24,4 +24,9 @@ class RegistrationsController < Devise::RegistrationsController
         end
   end
   
+  def edit
+    @subscription = current_user.subscription
+    render :edit
+  end
+  
 end

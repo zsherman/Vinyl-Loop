@@ -10,6 +10,6 @@ class CreateSubscriptions < ActiveRecord::Migration
     add_index :subscriptions, :plan_id
     add_index :subscriptions, :user_id
     add_index :subscriptions, :stripe_customer_token
-    add_index :subscriptions, [:plan_id, :user_id], :unique => true
+    add_index :subscriptions, :user_id, :unique => true
   end
 end

@@ -18,4 +18,29 @@ class Subscription < ActiveRecord::Base
     errors.add :base, "There was a problem with your credit card."
     false
   end
+  
+  def update_with_payment
+      customer = Stripe::Customer.retrieve(self.stripe_customer_token)
+      customer.update_subscription(prorate: false, plan: self.plan_id)
+      user = self.user
+      user.plan_id = self.plan_id
+      user.save
+      save!
+    rescue Stripe::InvalidRequestError => e
+      logger.error "Stripe error while creating customer: #{e.message}"
+      errors.add :base, "There was a problem with your credit card."
+      false
+    end
+    
+  def change_payment(token)
+    if valid?
+      customer = Stripe::Customer.retrieve(self.stripe_customer_token)
+      customer.card = token
+      customer.save
+    end
+    rescue Stripe::InvalidRequestError => e
+      logger.error "Stripe error while creating customer: #{e.message}"
+      errors.add :base, "There was a problem with your credit card."
+      false
+  end
 end
