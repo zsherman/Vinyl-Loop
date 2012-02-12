@@ -7,11 +7,14 @@ class Subscription < ActiveRecord::Base
   
   attr_accessor :stripe_card_token
   
-  def save_with_payment
+  def save_with_payment(user)
+    user.plan_id = self.plan_id
+    self.user_id = user.id
     if valid?
-      customer = Stripe::Customer.create(description: email, plan: plan_id, card: stripe_card_token)
+      customer = Stripe::Customer.create(description: user.email, plan: plan_id, card: stripe_card_token)
       self.stripe_customer_token = customer.id
       save!
+      user.save!
     end
   rescue Stripe::InvalidRequestError => e
     logger.error "Stripe error while creating customer: #{e.message}"

@@ -24,6 +24,7 @@
 
 <%= link_to "Back", :back %>
 
+<% if @subscription %>
 <h2>Edit Payment Information</h2>
 <%= form_for @subscription, :url => update_payment_user_path(@subscription), :html => { :class => "new_subscription", :id => "new_subscription" } do |f| %>
   <% if @subscription.errors.any? %>
@@ -59,6 +60,7 @@
       <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
     </div>
+    
   <% end %>
   <div id="stripe_error">
     <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
@@ -66,4 +68,5 @@
   <div class="actions">
     <%= f.submit "Submit" %>
   </div>
+<% end %>
 <% end %>

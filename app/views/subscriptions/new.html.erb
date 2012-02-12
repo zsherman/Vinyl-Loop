@@ -37,6 +37,30 @@
       <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
     </div>
+	<div class="field">
+      <%= label_tag :first_name, "First Name" %>
+      <%= text_field_tag :first_name %>
+    </div>
+	<div class="field">
+      <%= label_tag :last_name, "Last Name" %>
+      <%= text_field_tag :last_name %>
+    </div>
+	<div class="field">
+      <%= label_tag :address_line1, "Address" %>
+      <%= text_field_tag :address %>
+    </div>
+	<div class="field">
+      <%= label_tag :city, "City" %>
+      <%= text_field_tag :city %>
+    </div>
+	<div class="field">
+      <%= label_tag :address_state, "State" %>
+      <%= text_field_tag :state %>
+    </div>
+	<div class="field">
+      <%= label_tag :address_zip, "Zip Code" %>
+      <%= text_field_tag :zip_code %>
+    </div>
   <% end %>
   <div id="stripe_error">
     <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>

@@ -6,8 +6,15 @@ class SubscriptionsController < ApplicationController
 
   def create
     @subscription = Subscription.new(params[:subscription])
+    @user = User.find(current_user.id)
+    @user.first_name = params[:first_name]
+    @user.last_name = params[:last_name]
+    @user.address = params[:address]
+    @user.state = params[:state]
+    @user.city = params[:city]
+    @user.zip_code = params[:zip_code]
     #fix by passing in current user and setting in model @subscription.user_id = current_user.id
-      if @subscription.save_with_payment
+      if @subscription.save_with_payment(@user)
         redirect_to @subscription, :notice => "Thank you for subscribing, you rock!"
       else
         render :new
