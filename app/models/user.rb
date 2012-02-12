@@ -10,5 +10,9 @@ class User < ActiveRecord::Base
   belongs_to :plan
   has_one :subscription
   
+  def subscribe
+    h = Hominid::API.new('4d5460e70fba6abc2b50e4a2ecf1a18c-us4')
+    h.list_subscribe('ce50a4ab86', self.email, {'FNAME' => 'nil', 'LNAME' => 'nil'}, 'html', false, true, true, false)
+  end
   
 end
