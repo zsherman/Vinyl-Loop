@@ -47,4 +47,13 @@ class Subscription < ActiveRecord::Base
       errors.add :base, "There was a problem with your credit card."
       false
   end
+  
+  def deactivate_subscription
+    customer = Stripe::Customer.retrieve(self.stripe_customer_token)
+    customer.cancel_subscription
+    user = self.user
+    user.plan_id = nil
+    user.save
+    self.destroy
+  end
 end

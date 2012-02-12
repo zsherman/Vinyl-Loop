@@ -56,4 +56,10 @@ class SubscriptionsController < ApplicationController
     end
   end
   
+  def destroy
+    @subscription = Subscription.find(params[:id])
+    @subscription.deactivate_subscription
+    redirect_to "/dashboard"
+  end
+  
 end
