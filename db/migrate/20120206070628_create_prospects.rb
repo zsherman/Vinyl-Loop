@@ -4,5 +4,6 @@ class CreateProspects < ActiveRecord::Migration
       t.string  :email
       t.timestamps
     end
+    add_index :prospects, :email, :unique => true
   end
 end

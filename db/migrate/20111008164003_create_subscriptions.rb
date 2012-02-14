@@ -8,7 +8,6 @@ class CreateSubscriptions < ActiveRecord::Migration
       t.timestamps
     end
     add_index :subscriptions, :plan_id
-    add_index :subscriptions, :user_id
     add_index :subscriptions, :stripe_customer_token
     add_index :subscriptions, :user_id, :unique => true
   end

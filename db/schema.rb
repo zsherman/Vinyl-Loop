@@ -43,10 +43,9 @@ ActiveRecord::Schema.define(:version => 20120212030434) do
     t.datetime "updated_at"
   end
 
-  add_index "subscriptions", ["plan_id", "user_id"], :name => "index_subscriptions_on_plan_id_and_user_id", :unique => true
   add_index "subscriptions", ["plan_id"], :name => "index_subscriptions_on_plan_id"
   add_index "subscriptions", ["stripe_customer_token"], :name => "index_subscriptions_on_stripe_customer_token"
-  add_index "subscriptions", ["user_id"], :name => "index_subscriptions_on_user_id"
+  add_index "subscriptions", ["user_id"], :name => "index_subscriptions_on_user_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

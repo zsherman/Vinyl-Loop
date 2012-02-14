@@ -9,13 +9,19 @@ class ProspectsController < ApplicationController
   
   def create
     @prospect = Prospect.new(params[:prospect])
-    if @prospect.save
-      @prospect.subscribe
-      flash[:notice] = "Thanks! We'll let you know when spots open up."
-      redirect_to "/home"
+    check = Prospect.find_by_email(@prospect.email)
+    if check == nil
+      if @prospect.save
+        @prospect.subscribe
+        flash[:notice] = "Thanks! We'll let you know when spots open up."
+        redirect_to "/home"
+      else
+        flash[:notice] = "Sorry, something went wrong."
+        redirect_to "/home"
+      end
     else
-      flash[:notice] = "Sorry, something went wrong."
-      redirect_to root_path
+      flash[:notice] = "You've already been added to our list."
+      redirect_to "/home"
     end
   end
   
