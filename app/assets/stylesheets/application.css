@@ -7,7 +7,7 @@
 */
 
 html, body {
-  background-color: #4B7399;
+  background: url('bg.png');
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
