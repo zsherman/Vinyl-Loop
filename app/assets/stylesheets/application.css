@@ -131,7 +131,7 @@ h2 {
 	}
 	
 body {
-	background: #f6f6ee url(images/bck.jpg);
+	background: url(bg.gif);
 	font-family : "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif; 
 	font-size: 12px;
 	}	
@@ -140,13 +140,8 @@ body {
 /* Header */
 	
 header#site_head {
-	background: black;
-	-moz-box-shadow: inset 0px -2px 3px #480508;
-	-khtml-box-shadow: inset 0px -2px 3px #480508;				
-	-webkit-box-shadow: inset 0px -2px 3px #480508;
-	box-shadow: inset 0px -2px 3px #480508;
-	border-bottom: 1px solid #fffffb;
-	height: 70px;
+	background: gray;
+	height: 50px;
 	width: 100%;
 	display: block;
 }
