@@ -1,4 +1,6 @@
-
+<div id = "dashboard">
+<%= render 'layouts/dashboard_nav' %>
+<div id = "dashboard_content">
 <% if current_user.subscription %>
 List Plan Links Here:
 <br></br>
@@ -20,3 +22,5 @@ List Plan Links Here:
 You're not signed up for any plans at the moment.
 Sign Up Here: <%= link_to "Check out the plans", plans_path %>
 <% end %>
+</div>
+</div>
