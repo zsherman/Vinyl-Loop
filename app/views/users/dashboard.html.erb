@@ -1,5 +1,53 @@
-<div id = "dashboard">
-<%= render 'layouts/dashboard_nav' %>
+    <section id="page">
+        <section class="inner_page">
+            <aside class="sidebar">
+                <ul>
+                    <li><a href="#">Subscription</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Payment</a></li>
+                    <li><a href="#" class="active">Taste Profile</a></li>
+                    <li><a href="#">Password</a></li>
+                </ul>
+            </aside>
+            <section class="form_sec">
+                <form action="#">
+                    <fieldset>
+                        <div class="row">
+                            <label>Favorite Genre</label>
+                            <input type="text" value=" " class="textbox" />
+                        </div>
+                        <div class="row">
+                            <label>Favorite Artists</label>
+                            <input type="text" value=" " class="textbox" />
+                        </div>
+                        <div class="row">
+                            <label>Tags</label>
+                            <input type="text" value=" " class="textbox" />
+                        </div>
+                        <ul>
+                            <li><input type="button" value="grunge" class="redbtn" /></li>
+                            <li><input type="button" value="rock" class="redbtn" /></li>
+                            <li><input type="button" value="hip-hop" class="redbtn" /></li>
+                            <li><input type="button" value="triphop" class="redbtn" /></li>
+                        </ul>
+                        <ul>
+                            <li><input type="button" value="electronic" class="redbtn" /></li>
+                            <li><input type="button" value="indie" class="redbtn" /></li>
+                            <li><input type="button" value="classic" class="redbtn" /></li>
+                            <li><input type="button" value="ska" class="redbtn" /></li>
+                        </ul>
+                        <ul class="last">
+                            <li><input type="button" value="jazz" class="redbtn" /></li>
+                            <li><input type="button" value="alternative" class="redbtn" /></li>
+                        </ul>
+                        <input type="submit" value="Save" class="save" />
+                    </fieldset>
+                </form>
+            </section>
+			
+        </section>
+    </section>
+
 <div id = "dashboard_content">
 <% if current_user.subscription %>
 List Plan Links Here:

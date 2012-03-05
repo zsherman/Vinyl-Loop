@@ -1,0 +1,28 @@
+/****************Common css starts here*****************/
+h1, h2, h3, h4, h5, h6, p, ul, li, body, html, form, fieldset { margin:0; padding:0; outline:none; font-weight:normal; border:0 }
+form, fieldset { float:left; width:100% }
+img { border:0; }
+a { text-decoration:none; border:0; outline:0; }
+.clear { clear:both; width:auto !important }
+body { font-family: Arial, Helvetica, sans-serif; font-size:12px; background: url(body_bg.gif) repeat 0 0; }
+ul { list-style:none; }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {display: block; margin:0; padding:0;}
+/****************Common css ends here*****************/
+.wrapper{margin:0 auto; width:1013px;}
+#page{ float:left;width:100%; padding:39px 0 80px 0;}
+.inner_page{float:left; width:100%; border:1px solid #c8c6c5; background:#ffffff; padding:34px 0 25px 0;}
+.sidebar{float:left; padding:62px 0 0 0; width:265px;}
+.sidebar ul{float:left; width:199px; padding:0 0 0 66px}
+.sidebar ul li{float:left; padding:0 0 30px 0; width:161px;}
+.sidebar ul li a{ float:left; font-family:'Aller', Arial, Helvetica, sans-serif;; font-weight:bold; color:#c1bcbb; font-size:24px;}
+.sidebar ul li a.active{color:#9b9796;}
+.form_sec{float:left; width:687px; border-left:1px solid #c6c5c5; padding:20px 0 0 60px;}
+.form_sec .row{float:left; width:100%; padding:0 0 30px 0;}
+.form_sec .row label{ display:block;font-family:'NewsGothicMT', Arial, Helvetica, sans-serif;; font-weight:bold; color:#9b9796; font-size:16px; padding:0 0 10px 6px;}
+.form_sec input{background:none; border:none; padding:0;}
+.form_sec .row .textbox{float:left; width:415px; height:36px; background:url(input_bg.gif) no-repeat 0 0; padding:4px;font-family:Arial, Helvetica, sans-serif;  color:#9b9796; font-size:24px; line-height:36px;}
+.form_sec ul{float:left; width:100%; margin:0 0 0 -7px; display:inline; padding:0 0 14px 0;}
+.form_sec ul li{ float:left; padding:0 16px 0 0;}
+.form_sec ul li .redbtn{float:left; background:url(red_btn.gif) no-repeat 0 0; cursor:pointer; width:103px; height:40px; padding:0 0 5px 14px; font-size:12px; color:#eafbff;font-family:Arial, 'Helvetica', sans-serif; font-weight:bold; text-align:center;}
+.form_sec .save{float:right;background:url(save_btn.gif) no-repeat 0 0; cursor:pointer; width:121px; height:38px; text-align:center;font-family:'Aller', Arial, Helvetica, sans-serif;; font-weight:bold; margin:-5px 36px 0 0; position:relative; display:inline; color:#ffffff; font-size:18px; padding:0 0 3px 0;  }
+.form_sec ul.last{padding:0;}
