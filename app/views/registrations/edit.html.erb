@@ -1,100 +1,122 @@
-<div id = "dashboard">
-<%= render 'layouts/dashboard_nav' %>
-<div id = "dashboard_content">
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<section id="page">
+    <section class="inner_page">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">Subscription</a></li>
+                <li><a href="#" class="active">Shipping</a></li>
+                <li><a href="#">Payment</a></li>
+                <li><a href="#">Taste Profile</a></li>
+                <li><a href="#">Password</a></li>
+            </ul>
+        </aside>
+        <section class="form_sec">
+            <form action="#">
+                <fieldset>
+                    <div class="row">
+                        <h2>Edit <%= resource_name.to_s.humanize %></h2>
+					<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+					<%= devise_error_messages! %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+						  <div><%= f.label :email %><br />
+						  <%= f.email_field :email %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+						  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+						  <%= f.password_field :password %></div>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password %></div>
+						  <div><%= f.label :password_confirmation %><br />
+						  <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+						  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+						  <%= f.password_field :current_password %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
+						  <div><%= f.submit "Update" %></div>
+						<% end %>
 
-  <div><%= f.submit "Update" %></div>
-<% end %>
+						<h3>Cancel my account</h3>
 
-<h3>Cancel my account</h3>
+						<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+						<%= link_to "Back", :back %>
+                    </div>
+                    <div class="row">
+                        <% if @subscription %>
+						<h2>Edit Payment Information</h2>
+						<%= form_for @subscription, :url => update_payment_user_path(@subscription), :html => { :class => "new_subscription", :id => "new_subscription" } do |f| %>
+						  <% if @subscription.errors.any? %>
+						    <div class="error_messages">
+						      <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
+						      <ul>
+						      <% @subscription.errors.full_messages.each do |msg| %>
+						        <li><%= msg %></li>
+						      <% end %>
+						      </ul>
+						    </div>
+						  <% end %>
 
-<%= link_to "Back", :back %>
+						  <%= f.hidden_field :stripe_card_token %>
 
-<% if @subscription %>
-<h2>Edit Payment Information</h2>
-<%= form_for @subscription, :url => update_payment_user_path(@subscription), :html => { :class => "new_subscription", :id => "new_subscription" } do |f| %>
-  <% if @subscription.errors.any? %>
-    <div class="error_messages">
-      <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
-      <ul>
-      <% @subscription.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+						  <div class="field">
+						    <%= f.label :email %>
+						    <%= f.text_field :email %>
+						  </div>
+						  <% if @subscription.stripe_card_token.present? %>
+						    Credit card has been provided.
+						  <% else %>
+						    <div class="field">
+						      <%= label_tag :card_number, "Credit Card Number" %>
+						      <%= text_field_tag :card_number, nil, name: nil %>
+						    </div>
+						    <div class="field">
+						      <%= label_tag :card_code, "Security Code on Card (CVV)" %>
+						      <%= text_field_tag :card_code, nil, name: nil %>
+						    </div>
+						    <div class="field">
+						      <%= label_tag :card_month, "Card Expiration" %>
+						      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+						      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
+						    </div>
 
-  <%= f.hidden_field :stripe_card_token %>
+						  <% end %>
+						  <div id="stripe_error">
+						    <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+						  </div>
+						  <div class="actions">
+						    <%= f.submit "Submit" %>
+						  </div>
+						<% end %>
+						<p><%= link_to "Cancel Subscription", @subscription, :method => :delete, :confirm => "Are you sure you want to cancel this subscription?" %></p>
+						<% end %>
+                    </div>
+                    <div class="row">
+                        <h2>Shipping Information</h2>
+						<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+						  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <% if @subscription.stripe_card_token.present? %>
-    Credit card has been provided.
-  <% else %>
-    <div class="field">
-      <%= label_tag :card_number, "Credit Card Number" %>
-      <%= text_field_tag :card_number, nil, name: nil %>
-    </div>
-    <div class="field">
-      <%= label_tag :card_code, "Security Code on Card (CVV)" %>
-      <%= text_field_tag :card_code, nil, name: nil %>
-    </div>
-    <div class="field">
-      <%= label_tag :card_month, "Card Expiration" %>
-      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
-      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
-    </div>
-    
-  <% end %>
-  <div id="stripe_error">
-    <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
-  </div>
-  <div class="actions">
-    <%= f.submit "Submit" %>
-  </div>
-<% end %>
-<p><%= link_to "Cancel Subscription", @subscription, :method => :delete, :confirm => "Are you sure you want to cancel this subscription?" %></p>
-<% end %>
+						  <div><%= f.label :address %><br />
+						  <%= f.text_field :address %></div>
 
-<h2>Shipping Information</h2>
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+						  <div><%= f.label :city %> <br />
+						  <%= f.text_field :city %></div>
 
-  <div><%= f.label :address %><br />
-  <%= f.text_field :address %></div>
+						  <div><%= f.label :state %><br />
+						  <%= f.text_field :state %></div>
 
-  <div><%= f.label :city %> <br />
-  <%= f.text_field :city %></div>
+						  <div><%= f.label :zip_code %> <br />
+						  <%= f.text_field :zip_code %></div>
 
-  <div><%= f.label :state %><br />
-  <%= f.text_field :state %></div>
+						 <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+						  <%= f.password_field :current_password %></div>
 
-  <div><%= f.label :zip_code %> <br />
-  <%= f.text_field :zip_code %></div>
+						  <div><%= f.submit "Update" %></div>
+						<% end %>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+		
+    </section>
+</section>
 
- <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
 
-  <div><%= f.submit "Update" %></div>
-<% end %>
-</div>
-</div>
+
+

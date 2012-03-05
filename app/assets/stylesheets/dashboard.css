@@ -16,7 +16,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 .sidebar ul li{float:left; padding:0 0 30px 0; width:161px;}
 .sidebar ul li a{ float:left; font-family:'Aller', Arial, Helvetica, sans-serif;; font-weight:bold; color:#c1bcbb; font-size:24px;}
 .sidebar ul li a.active{color:#9b9796;}
-.form_sec{float:left; width:687px; border-left:1px solid #c6c5c5; padding:20px 0 0 60px;}
+.form_sec{float:left; width:687px; border-left:1px solid #c6c5c5; padding:20px 0 0 60px; min-height:400px;}
 .form_sec .row{float:left; width:100%; padding:0 0 30px 0;}
 .form_sec .row label{ display:block;font-family:'NewsGothicMT', Arial, Helvetica, sans-serif;; font-weight:bold; color:#9b9796; font-size:16px; padding:0 0 10px 6px;}
 .form_sec input{background:none; border:none; padding:0;}
