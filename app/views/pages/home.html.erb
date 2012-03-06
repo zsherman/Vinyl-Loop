@@ -1,6 +1,11 @@
+<div id="vinyl_loop">
+	<%= image_tag("vinyl_loop.png")%>
+</div>
+
 <div id="home_page_forms">
 <!--New Prospect Form-->
 <div id="prospect_form">
+  <div id="inner_prospect">
 	<h2>The Coolest New Vinyl</h2>
 	<h2>Delivered Monthly</h2>
 	<h4>Enter your email to receive an invite code</h4>
@@ -11,15 +16,18 @@
 <br></br>
 <%= link_to "Invite Code? Sign Up", new_user_registration_path %>
 </div>
+</div>
 
 
 
 <div id="sign_in_form">
+<div id="inner_sign_in">
+<h2>Sign In</h2>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
+  <div><br />
   <%= f.email_field :email %></div>
 
-  <div><%= f.label :password %><br />
+  <div><br />
   <%= f.password_field :password %></div>
 
   <% if devise_mapping.rememberable? -%>
@@ -28,5 +36,6 @@
 
   <div><%= f.submit "Sign in" %></div>
 <% end %>
+</div>
 </div>
 </div>

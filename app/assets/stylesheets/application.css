@@ -93,6 +93,11 @@ h2 {
 	background: transparent;
 }
 
+#vinyl_loop {
+	width: 300px;
+	margin: 0px auto;
+}
+
 #home_page_forms {
 	width: 760px;
 	margin: 0 auto;
@@ -105,11 +110,24 @@ h2 {
 	height: 200px;
 	width: 400px;
 	background: black;
-	margin-top: 150px;
+	margin-top: 50px;
 	margin-right: 10px;
 	margin-left: 10px;
 	opacity: .90;
+	-moz-border-radius:    5px;
+	-webkit-border-radius: 5px;
+	border-radius:         5px;
+}
+
+#prospect_form h2 {
 	font-family:'Aller', Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+#inner_prospect {
+	margin-left: 15%;
+	margin-top: 5%;
 }
 
 #sign_in_form {
@@ -117,8 +135,22 @@ h2 {
 	width: 300px;
 	height: 200px;
 	background: black;
-	margin-top: 150px;
+	margin-top: 50px;
 	opacity: .90;
+	-moz-border-radius:    5px;
+	-webkit-border-radius: 5px;
+	border-radius:         5px;
+}
+
+#sign_in_form h2 {
+	font-family:'Aller', Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+#inner_sign_in {
+	margin-left: 15%;
+	margin-top: 5%;
 }
 
 
