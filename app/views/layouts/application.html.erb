@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html>
+<%if @title == "Home"%>
+	<html id="main_image">
+<% else %>
+	<html>
+<% end %>
 <head>
   <title><%= @title %></title>
   <%= stylesheet_link_tag    "application" %>
@@ -7,14 +11,18 @@
   <%= csrf_meta_tags %>
   <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 </head>
-<body>
+<% if @title == "Home" %>
+	<body id="image_body">
+<% else %>
+	<body>
+<% end %>
  <%= render 'layouts/header' %>
   <div class="wrapper"><!--useful to create the 960px limit-->
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     <% end %>
     <%= yield %>
-<%# debug(params) if Rails.env.development? %>
+<%= debug(params) if Rails.env.development? %>
   </div>
  <%= render 'layouts/footer'%>
 </body>

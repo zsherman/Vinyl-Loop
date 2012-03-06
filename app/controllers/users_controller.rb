@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
   
   def dashboard
+    @title = "dashboard"
     if current_user.plan
       @user_plan = current_user.plan
       @plans = Plan.all

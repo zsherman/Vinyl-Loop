@@ -1,0 +1,46 @@
+#login_container {
+	width: 357px;
+	height: 383px;
+	margin: 0 auto;
+	background: url('login_bg.png') top left no-repeat;
+}
+
+#form_container {
+	width: 300px;
+	height: 200px;
+	margin: 0px auto;
+	padding-top: 80px;
+}
+
+.text_input:focus {
+	outline: 0;
+}
+
+#form_container input {
+	color: #c1c1c3;
+	border: 0;
+	margin: 5px 35px 0 34px;
+	padding: 0px 0px 0px 10px;
+	width: 229px;
+	height: 32px;
+	background: url('text_input.png') top left no-repeat;
+}
+
+#form_container input[type='submit'] {
+	margin: 20px 108px;
+	border: 0;
+	width: 83px;
+	height: 30px;
+	background: url('login_btn.png') top left no-repeat;
+}
+
+#login:hover {
+	background: url('login_btn_hov.png') top left no-repeat;
+}
+
+.login-text {
+	text-align:center;
+	margin:25px;
+	color:#515151;
+	font-family: 'Lobster', cursive;
+}
