@@ -2,34 +2,33 @@
     <section class="inner_page">
         <aside class="sidebar">
             <ul>
-                <li><a href="#">Subscription</a></li>
-                <li><a href="#" class="active">Shipping</a></li>
-                <li><a href="#">Payment</a></li>
+                <li><%= link_to "Subscription", "/dashboard"%></li>
+                <li><%= link_to "Shipping", edit_user_registration_path, :class => "active"%></li>
+                <li><%= link_to "Payment", edit_user_registration_path%></li>
                 <li><a href="#">Taste Profile</a></li>
-                <li><a href="#">Password</a></li>
+                <li><%= link_to "Shipping", edit_user_registration_path%></li>
             </ul>
         </aside>
         <section class="form_sec">
-            <form action="#">
                 <fieldset>
                     <div class="row">
                         <h2>Edit <%= resource_name.to_s.humanize %></h2>
-					<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+					<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put}) do |f| %>
 					<%= devise_error_messages! %>
 
-						  <div><%= f.label :email %><br />
-						  <%= f.email_field :email %></div>
+						  <div class="row"><%= f.label :email %><br />
+						  <%= f.email_field :email, :class => "textbox" %></div>
 
-						  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-						  <%= f.password_field :password %></div>
+						  <div class="row"><%= f.label :new_password %> <i>(leave blank if you don't want to change it)</i><br />
+						  <%= f.password_field :password, :class => "textbox" %></div>
 
-						  <div><%= f.label :password_confirmation %><br />
-						  <%= f.password_field :password_confirmation %></div>
+						  <div class="row"><%= f.label :new_password_confirmation %><br />
+						  <%= f.password_field :password_confirmation, :class => "textbox" %></div>
 
-						  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-						  <%= f.password_field :current_password %></div>
+						  <div class="row"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+						  <%= f.password_field :current_password, :class => "textbox" %></div>
 
-						  <div><%= f.submit "Update" %></div>
+						  <div><%= f.submit "Update", :class => "save" %></div>
 						<% end %>
 
 						<h3>Cancel my account</h3>
@@ -55,22 +54,22 @@
 
 						  <%= f.hidden_field :stripe_card_token %>
 
-						  <div class="field">
+						  <div class="row">
 						    <%= f.label :email %>
-						    <%= f.text_field :email %>
+						    <%= f.text_field :email, :class => "textbox" %>
 						  </div>
 						  <% if @subscription.stripe_card_token.present? %>
 						    Credit card has been provided.
 						  <% else %>
-						    <div class="field">
+						    <div class="row">
 						      <%= label_tag :card_number, "Credit Card Number" %>
-						      <%= text_field_tag :card_number, nil, name: nil %>
+						      <%= text_field_tag :card_number, nil, name: nil, :class => "textbox" %>
 						    </div>
-						    <div class="field">
+						    <div class="row">
 						      <%= label_tag :card_code, "Security Code on Card (CVV)" %>
-						      <%= text_field_tag :card_code, nil, name: nil %>
+						      <%= text_field_tag :card_code, nil, name: nil, :class => "textbox" %>
 						    </div>
-						    <div class="field">
+						    <div class="row">
 						      <%= label_tag :card_month, "Card Expiration" %>
 						      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
 						      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
@@ -81,7 +80,7 @@
 						    <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
 						  </div>
 						  <div class="actions">
-						    <%= f.submit "Submit" %>
+						    <%= f.submit "Update", :class => "save" %>
 						  </div>
 						<% end %>
 						<p><%= link_to "Cancel Subscription", @subscription, :method => :delete, :confirm => "Are you sure you want to cancel this subscription?" %></p>
@@ -92,22 +91,22 @@
 						<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 						  <%= devise_error_messages! %>
 
-						  <div><%= f.label :address %><br />
-						  <%= f.text_field :address %></div>
+						  <div class="row"><%= f.label :address %><br />
+						  <%= f.text_field :address, :class => "textbox" %></div>
 
-						  <div><%= f.label :city %> <br />
-						  <%= f.text_field :city %></div>
+						  <div class="row"><%= f.label :city %> <br />
+						  <%= f.text_field :city, :class => "textbox" %></div>
 
-						  <div><%= f.label :state %><br />
-						  <%= f.text_field :state %></div>
+						  <div class="row"><%= f.label :state %><br />
+						  <%= f.text_field :state, :class => "textbox" %></div>
 
-						  <div><%= f.label :zip_code %> <br />
-						  <%= f.text_field :zip_code %></div>
+						  <div class="row"><%= f.label :zip_code %> <br />
+						  <%= f.text_field :zip_code, :class => "textbox" %></div>
 
-						 <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-						  <%= f.password_field :current_password %></div>
+						 <div class="row"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+						  <%= f.password_field :current_password, :class => "textbox" %></div>
 
-						  <div><%= f.submit "Update" %></div>
+						  <div><%= f.submit "Update", :class => "save" %></div>
 						<% end %>
                     </div>
                 </fieldset>

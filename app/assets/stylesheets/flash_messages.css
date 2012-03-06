@@ -1,6 +1,5 @@
 #flash_notice, #flash_error, #flash_alert {
-  padding: 5px 8px;
-  margin: 10px 0;
+
 }
 
 #flash_notice {
@@ -14,12 +13,12 @@
 }
 
 form label {
-  display: block;
-  margin-bottom: 2px;
+  /****************display: block;*****************/
+  /****************margin-bottom: 2px;*****************/
 }
 
 form .field, form .actions {
-  margin: 12px 0;
+  /** margin: 12px 0; **/
 }
 
 .fieldWithErrors {
