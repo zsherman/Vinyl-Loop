@@ -1,6 +1,6 @@
 /****************Common css ends here*****************/
 .wrapper{margin:0 auto; width:960px;}
-#page{ float:left;width:100%; padding:39px 0 0px 0;}
+#page{ float:left;width:100%; padding:39px 0 0px 0; margin-bottom: 30px;}
 .inner_page{float:left; width:100%; border:1px solid #c8c6c5; background:#ffffff; padding:34px 0 25px 0; opacity: .97; -moz-border-radius:5px; -webkit-border-radius: 5px; border-radius:5px;}
 .sidebar{float:left; padding:62px 0 0 0; width:265px;}
 .sidebar ul{float:left; width:199px; padding:0 0 0 66px}
