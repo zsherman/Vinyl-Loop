@@ -14,6 +14,16 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit_payment
+    @subscription = current_user.subscription
+    @user = current_user
+  end
+  
+  def edit_password
+    @subscription = current_user.subscription
+    @user = current_user
+  end
+  
   def update_payment
     @subscription = Subscription.find(params[:id])
     @subscription.attributes = params[:subscription]

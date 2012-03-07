@@ -21,7 +21,8 @@ Saas::Application.routes.draw do
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
   match '/dashboard', :to => 'users#dashboard'
-  match '/edit_payment', :to => 'subscriptions#edit_payment'
+  match '/edit_payment', :to => 'users#edit_payment'
+  match '/edit_password', :to => 'users#edit_password'
   
 
 end

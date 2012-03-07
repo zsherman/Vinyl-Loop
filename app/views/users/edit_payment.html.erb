@@ -1,0 +1,70 @@
+<section id="page">
+    <section class="inner_page">
+        <aside class="sidebar">
+            <ul>
+                <li><%= link_to "Subscription", "/dashboard"%></li>
+                <li><%= link_to "Shipping", edit_user_registration_path%></li>
+                <li><%= link_to "Payment", '/edit_payment', :class => "active"%></li>
+                <li><a href="#">Taste Profile</a></li>
+                <li><%= link_to "Password", '/edit_password'%></li>
+            </ul>
+        </aside>
+        <section class="form_sec">
+                <fieldset>
+                    
+                    <div class="row">
+                        <% if @subscription %>
+						<h2>Edit Payment Information</h2>
+						<%= form_for @subscription, :url => update_payment_user_path(@subscription), :html => { :class => "new_subscription", :id => "new_subscription" } do |f| %>
+						  <% if @subscription.errors.any? %>
+						    <div class="error_messages">
+						      <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
+						      <ul>
+						      <% @subscription.errors.full_messages.each do |msg| %>
+						        <li><%= msg %></li>
+						      <% end %>
+						      </ul>
+						    </div>
+						  <% end %>
+
+						  <%= f.hidden_field :stripe_card_token %>
+
+						  <div class="row">
+						    <%= f.label :email %>
+						    <%= f.text_field :email, :class => "textbox" %>
+						  </div>
+						  <% if @subscription.stripe_card_token.present? %>
+						    Credit card has been provided.
+						  <% else %>
+						    <div class="row">
+						      <%= label_tag :card_number, "Credit Card Number" %>
+						      <%= text_field_tag :card_number, nil, name: nil, :class => "textbox" %>
+						    </div>
+						    <div class="row">
+						      <%= label_tag :card_code, "Security Code on Card (CVV)" %>
+						      <%= text_field_tag :card_code, nil, name: nil, :class => "textbox" %>
+						    </div>
+						    <div class="row">
+						      <%= label_tag :card_month, "Card Expiration" %>
+						      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+						      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
+						    </div>
+
+						  <% end %>
+						  <div id="stripe_error">
+						    <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+						  </div>
+						  <div class="actions">
+						    <%= f.submit "Update", :class => "save" %>
+						  </div>
+						<% end %>
+						<p><%= link_to "Cancel Subscription", @subscription, :method => :delete, :confirm => "Are you sure you want to cancel this subscription?" %></p>
+						<% end %>
+                    </div>
+                    
+                </fieldset>
+            </form>
+        </section>
+
+    </section>
+</section>
