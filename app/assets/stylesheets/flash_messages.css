@@ -5,6 +5,7 @@
 #flash_notice {
   background-color: #CFC;
   border: solid 1px #6C6;
+
 }
 
 #flash_error, #flash_alert {

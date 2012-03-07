@@ -1,3 +1,7 @@
+<section id="page">
+    <section class="inner_page">
+		<section class="form_sec">
+                <fieldset>
 <%= @plan.id %>
 <h1>Signing up for "<%= @subscription.plan.name %>"</h1>
 <p>Includes <strong><%= @subscription.plan.kisses %> llama kisses</strong> for only <strong><%= number_to_currency @subscription.plan.price %></strong> per month!</p>
@@ -20,23 +24,23 @@
 
   <%= f.hidden_field :stripe_customer_token %>
 
-  <div class="field">
+  <div class="row">
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :class => "textbox" %>
   </div>
   <% if @subscription.stripe_card_token.present? %>
     Credit card has been provided.
   <% else %>
-    <div class="field">
+    <div class="row">
       <%= label_tag :card_number, "Credit Card Number" %>
-      <%= text_field_tag :card_number, nil, name: nil %>
+      <%= text_field_tag :card_number, nil, name: nil, :class => "textbox" %>
     </div>
-    <div class="field">
+    <div class="row">
       <%= label_tag :card_code, "Security Code on Card (CVV)" %>
-      <%= text_field_tag :card_code, nil, name: nil %>
+      <%= text_field_tag :card_code, nil, name: nil, :class => "textbox" %>
     </div>
-    <div class="field">
-      <%= label_tag :card_month, "Card Expiration" %>
+    <div class="row">
+      <%= label_tag :card_month, "Card Expiration"%>
       <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
     </div>
@@ -45,6 +49,10 @@
     <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
   </div>
   <div class="actions">
-    <%= f.submit "Subscribe" %>
+    <%= f.submit "Subscribe", :class => "save" %>
   </div>
 <% end %>
+</fieldset>
+</section>
+ </section>
+</section>

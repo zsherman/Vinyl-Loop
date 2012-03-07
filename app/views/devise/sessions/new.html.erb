@@ -1,22 +1,24 @@
-<div id="login_container">
-	<div id="form_container">
-		<p class="login-text">Sign In</p>
-		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-		  <div>
-		  <%= f.email_field :email %></div>
+<!--New Prospect Form-->
+<div id = "single_home_page_form">
+<div id="single_sign_in_form">
+  <div id="inner_single_sign_in">
+	<h2>Sign In</h2>
+	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	  <div>
+	  <%= f.email_field :email %></div>
 
-		  <div>
-		  <%= f.password_field :password %></div>
+	  <div>
+	  <%= f.password_field :password %></div>
 
-		  <% if devise_mapping.rememberable? -%>
-		    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-		  <% end -%>
+	  <% if devise_mapping.rememberable? -%>
+	    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+	  <% end -%>
 
-		  <div><%= f.submit "", :class => "login" %></div>
-		<% end %>
+	  <div><%= f.submit "Submit", :class => "login" %></div>
+	<% end %>
 
-		<%= render "links" %>
-	</div>
+	<%= render "links" %>
 </div>
-
+</div>
+</div>
 

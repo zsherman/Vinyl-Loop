@@ -1,14 +1,14 @@
-#single_home_page_form {
+#sign_up_container {
 	width: 300px;
 	margin: 0 auto;
 	color: white;
 	font-size: 15px;
 }
 
-#single_sign_in_form {
+#sign_up_form {
 	float: left;
 	width: 300px;
-	height: 200px;
+	height: 230px;
 	background: black;
 	color: white;
 	margin-top: 50px;
@@ -18,14 +18,14 @@
 	border-radius:         5px;
 }
 
-#inner_single_sign_in h2 {
+#inner_sign_up_form h2 {
 	font-family:'Aller', Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	font-size: 24px;
 	color: white;
 }
 
-#inner_single_sign_in {
+#inner_sign_up_form {
 	margin-left: 15%;
 	margin-top: 5%;
 }
