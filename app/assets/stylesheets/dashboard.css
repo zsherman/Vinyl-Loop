@@ -1,7 +1,7 @@
 /****************Common css ends here*****************/
 .wrapper{margin:0 auto; width:1013px;}
 #page{ float:left;width:100%; padding:39px 0 80px 0;}
-.inner_page{float:left; width:100%; border:1px solid #c8c6c5; background:#ffffff; padding:34px 0 25px 0; opacity: .95;}
+.inner_page{float:left; width:100%; border:1px solid #c8c6c5; background:#ffffff; padding:34px 0 25px 0; opacity: .97; -moz-border-radius:5px; -webkit-border-radius: 5px; border-radius:5px;}
 .sidebar{float:left; padding:62px 0 0 0; width:265px;}
 .sidebar ul{float:left; width:199px; padding:0 0 0 66px}
 .sidebar ul li{float:left; padding:0 0 30px 0; width:161px;}
@@ -17,3 +17,22 @@
 .form_sec ul li .redbtn{float:left; background:url(red_btn.gif) no-repeat 0 0; cursor:pointer; width:103px; height:40px; padding:0 0 5px 14px; font-size:12px; color:#eafbff;font-family:Arial, 'Helvetica', sans-serif; font-weight:bold; text-align:center;}
 .form_sec .save{float:right;background:url(save_btn.gif) no-repeat 0 0; cursor:pointer; width:121px; height:38px; text-align:center;font-family:'Aller', Arial, Helvetica, sans-serif;; font-weight:bold; margin:-5px 36px 0 0; position:relative; display:inline; color:#ffffff; font-size:18px; padding:0 0 3px 0;  }
 .form_sec ul.last{padding:0;}
+
+#vinyl_plans {
+	width: 600px;
+	margin: 0 auto;
+}
+
+#your_plan {
+	width: 100px;
+	float: left;
+	margin-right: 0px;
+	text-align: center;
+}
+
+#other_plan {
+	float: left;
+	width: 100px;
+	margin-right: 100px;
+	text-align: center;
+}

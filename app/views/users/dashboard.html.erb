@@ -11,25 +11,29 @@
             </aside>
             <section class="form_sec">
                 <% if current_user.subscription %>
-				List Plan Links Here:
-				<br></br>
+				<div id = "vinyl_plans">
 				<% @plans.each do |plan| %>
 					<% if plan == @user_plan%>
-						<br><%= "Your signed up for the " + plan.name + " plan."%></br>
+						<div id ="your_plan">
+							<%= image_tag("ninja.png") %>
+							<%= plan.name + " (your plan)" %>
+						</div>
 					<% else %>
-					<br><%= link_to plan.name, edit_subscription_path(current_user.subscription, :plan_id => plan.id)%></br>
+					<div id ="other_plan">
+						<%= image_tag("ninja.png") %>
+						<%= link_to plan.name, edit_subscription_path(current_user.subscription, :plan_id => plan.id)%>
+					</div>
 					<% end %>
 				<% end %>
-
-				<br></br>
-				1. Link on index page for example:
-				2. <%= link_to "Sign up", new_subscription_path(:plan_id => @user_plan.id) %>
-				3. Show if the plan is the existing user's plan
+					</div>
+					</div>
 
 				<% else %>
 
 				You're not signed up for any plans at the moment.
 				Sign Up Here: <%= link_to "Check out the plans", plans_path %>
+				1. Link on index page for example:
+				2. <%= link_to "Sign up", new_subscription_path(:plan_id => @user_plan.id) %>
 				<% end %>
             </section>
 			
