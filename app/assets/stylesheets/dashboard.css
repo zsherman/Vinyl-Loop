@@ -1,7 +1,7 @@
 /****************Common css ends here*****************/
 .wrapper{margin:0 auto; width:1013px;}
 #page{ float:left;width:100%; padding:39px 0 80px 0;}
-.inner_page{float:left; width:100%; border:1px solid #c8c6c5; background:#ffffff; padding:34px 0 25px 0;}
+.inner_page{float:left; width:100%; border:1px solid #c8c6c5; background:#ffffff; padding:34px 0 25px 0; opacity: .95;}
 .sidebar{float:left; padding:62px 0 0 0; width:265px;}
 .sidebar ul{float:left; width:199px; padding:0 0 0 66px}
 .sidebar ul li{float:left; padding:0 0 30px 0; width:161px;}
