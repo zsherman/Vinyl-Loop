@@ -13,13 +13,18 @@
                 <fieldset>
                     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put}) do |f| %>
 					<%= devise_error_messages! %>
-					<div class="row"><%= f.label :tag_names %><i>(leave blank if you don't want to change it)</i><br />
+					<div class="row"><%= f.label :tag_names %><i>(enter genres or tags separated by a space and press enter)</i><br />
 					  <%= f.text_field :tag_names, :class => "textbox" %></div>
 
-					  <div><%= f.submit "Update", :class => "save" %></div>
+					  <div><%= f.submit "Update", :class => "no_submit" %></div>
 						<% end %>
-						<%= current_user.tags%>
-                    
+						
+						<ul>
+						<% @tags.each do |tag| %>
+							<li class="tag"><%= tag.name%></li>
+						<% end %>
+                    	</ul>
+                            
                 </fieldset>
             </form>
         </section>

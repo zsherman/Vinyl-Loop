@@ -38,6 +38,7 @@ class UsersController < ApplicationController
   def taste_profile
     @user = current_user
     resource = current_user
+    @tags = current_user.tags
   end
   
 end
