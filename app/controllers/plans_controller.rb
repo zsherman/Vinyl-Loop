@@ -7,7 +7,7 @@ class PlansController < ApplicationController
   
   def check_signed_in
     if !current_user
-      redirect_to "/home"
+      
     end
   end
 end

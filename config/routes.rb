@@ -1,6 +1,10 @@
 Saas::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   devise_for :users, :controllers => {:registrations => 'registrations'}
-  root to: 'plans#index'
+  root to: 'pages#home'
   resources :subscriptions do
     member do
       get  :edit_payment

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :check_signed_in
+  before_filter :check_plan
   
   def show
     @user = User.find(params[:id])
@@ -39,6 +41,20 @@ class UsersController < ApplicationController
     @user = current_user
     resource = current_user
     @tags = current_user.tags
+  end
+  
+  def check_signed_in
+    if !current_user
+      redirect_to "/home"
+    end
+  end
+  
+  def check_plan
+    if !current_user.plan
+      plans_path
+    elsif current_user.plan
+      "/dashboard"
+    end
   end
   
 end

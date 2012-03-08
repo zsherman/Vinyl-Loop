@@ -1,4 +1,6 @@
 class SubscriptionsController < ApplicationController
+  before_filter :check_signed_in
+  
   def new
     plan = Plan.find(params[:plan_id])
     @subscription = plan.subscriptions.build
@@ -60,6 +62,13 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.find(params[:id])
     @subscription.deactivate_subscription
     redirect_to "/dashboard"
+  end
+  
+  def check_signed_in
+    if !current_user
+      flash[:notice] = "You need to be signed up to do that."
+      redirect_to plans_path
+    end
   end
   
 end

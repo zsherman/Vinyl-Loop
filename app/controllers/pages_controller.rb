@@ -1,6 +1,11 @@
 class PagesController < ApplicationController
   def home
      @title = "Home"
+     if current_user
+       redirect_to "/dashboard"
+     else
+       
+     end  
   end
 
    def contact
