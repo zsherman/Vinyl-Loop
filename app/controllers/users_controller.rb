@@ -35,4 +35,9 @@ class UsersController < ApplicationController
     end
   end
   
+  def taste_profile
+    @user = current_user
+    resource = current_user
+  end
+  
 end

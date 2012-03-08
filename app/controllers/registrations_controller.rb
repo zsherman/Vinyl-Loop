@@ -38,4 +38,19 @@ class RegistrationsController < Devise::RegistrationsController
       respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
   end
   
+  def update
+    @user = User.find(current_user.id)
+        if @user.update_attributes(params[:user])
+          flash[:notice] = "Thanks, your information has been updated."
+          sign_in @user, :bypass => true
+          redirect_to "/dashboard"
+        else
+          render "edit"
+        end
+  end
+  
+  def taste_profile
+    @user = current_user
+  end
+  
 end

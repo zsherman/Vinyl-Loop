@@ -1,0 +1,29 @@
+<section id="page">
+    <section class="inner_page">
+        <aside class="sidebar">
+            <ul>
+                <li><%= link_to "Subscription", "/dashboard"%></li>
+                <li><%= link_to "Shipping", edit_user_registration_path%></li>
+                <li><%= link_to "Payment", '/edit_payment'%></li>
+                <li><%= link_to "Taste Profile", '/taste_profile', :class => "active"%></li>
+                <li><%= link_to "Password", '/edit_password'%></li>
+            </ul>
+        </aside>
+        <section class="form_sec">
+                <fieldset>
+                    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put}) do |f| %>
+					<%= devise_error_messages! %>
+					<div class="row"><%= f.label :tag_names %><i>(leave blank if you don't want to change it)</i><br />
+					  <%= f.text_field :tag_names, :class => "textbox" %></div>
+
+					  <div><%= f.submit "Update", :class => "save" %></div>
+						<% end %>
+						<%= current_user.tags%>
+                    
+                </fieldset>
+            </form>
+        </section>
+
+    </section>
+</section>
+		
