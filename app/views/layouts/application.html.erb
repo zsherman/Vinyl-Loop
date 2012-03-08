@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%if @title = "Home"%>
+<%if @title == "Home"%>
 	<html id="main_image">
 <% else %>
 	<html>
@@ -11,7 +11,7 @@
   <%= csrf_meta_tags %>
   <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 </head>
-<% if @title = "Home" %>
+<% if @title == "Home" %>
 	<body id="image_body">
 <% else %>
 	<body>

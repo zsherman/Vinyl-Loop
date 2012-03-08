@@ -5,6 +5,9 @@
 #flash_notice {
   background-color: #CFC;
   border: solid 1px #6C6;
+  float: left;
+  width: 100%;
+  margin-top: 30px;
 
 }
 

@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   background-position: 480px -10px;
   margin: 0 auto;
-  padding-top: 60px;
+  padding-top: 10px;
   margin-bottom: 10px;
   width: 750px;
   h1 {
@@ -19,9 +19,9 @@
     float: left;
     width: 200px;
     text-align: center;
-	margin-top: 50px;
-    margin-right: 25px;
-	margin-left: 25px;
+	margin-top: 10px;
+    margin-right: 10px;
+	margin-left: 30px;
     -moz-border-radius:    5px;
 	-webkit-border-radius: 5px;
 	border-radius:         5px;
@@ -33,13 +33,9 @@
       border: solid 1px #8D8D8D;
       background-color: white;
 	  opacity: .95;
-      border-top: none;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      -webkit-border-bottom-left-radius: 5px;
-      -webkit-border-bottom-right-radius: 5px;
-      -moz-border-radius-bottomleft: 5px;
-      -moz-border-radius-bottomright: 5px;
+     -moz-border-radius:    5px;
+	 -webkit-border-radius: 5px;
+	  border-radius:        5px;
     }
     .price {
       font-size: 50px;
