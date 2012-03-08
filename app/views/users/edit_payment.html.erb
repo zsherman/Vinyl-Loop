@@ -59,6 +59,8 @@
 						  </div>
 						<% end %>
 						<p><%= link_to "Cancel Subscription", @subscription, :method => :delete, :confirm => "Are you sure you want to cancel this subscription?" %></p>
+						<% else %>
+						<p>Sign Up For A Plan First</p><%= link_to "Plans", plans_path %>
 						<% end %>
                     </div>
                     
