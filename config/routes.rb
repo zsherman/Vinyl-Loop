@@ -27,6 +27,7 @@ Saas::Application.routes.draw do
   match '/edit_payment', :to => 'users#edit_payment'
   match '/edit_password', :to => 'users#edit_password'
   match '/taste_profile', :to => 'users#taste_profile'
+  match '/stripe_event', :to => 'users#stripe_event', :via => :post
 
   
   #
