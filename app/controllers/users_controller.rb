@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     else
       
     end
+    logger.info "wolverine"
   end
   
   def edit_payment

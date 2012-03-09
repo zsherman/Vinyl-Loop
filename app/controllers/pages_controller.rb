@@ -22,6 +22,5 @@ class PagesController < ApplicationController
 
    def dashboard
      @title = "Dashboard"
-     logger.info "dashboard"
    end
 end
