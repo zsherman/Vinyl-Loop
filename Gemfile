@@ -9,7 +9,7 @@ gem 'pg', :group => :production
 gem 'pg', :group => [:development, :test]
 
 group :development do
-  gem 'taps', :require => false # has an sqlite dependency, which heroku hates
+  
 end
 
 
