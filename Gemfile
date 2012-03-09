@@ -5,9 +5,13 @@ gem 'rails', '3.1.1'
 
 gem "pg"
 
-group :development do
+gem 'pg', :group => :production
+gem 'pg', :group => [:development, :test]
 
+group :development do
+  gem 'taps', :require => false # has an sqlite dependency, which heroku hates
 end
+
 
 gem 'devise'
 gem 'activeadmin'
@@ -32,5 +36,3 @@ gem 'stripe'
 gem 'rack', '1.3.3'
 
 gem 'hominid'
-
-gem 'taps'
