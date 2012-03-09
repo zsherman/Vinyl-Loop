@@ -59,7 +59,7 @@ class UsersController < ApplicationController
   
   def stripe_event
     event_json = JSON.parse(request.body.read)
-    logger.info event_json
+    logger.info "event_json"
   end
   
 end
