@@ -1,7 +1,9 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
-gem 'pg'
+group :production, :staging do
+  gem "pg"
+end
 gem 'devise'
 gem 'activeadmin'
 gem 'thin'
