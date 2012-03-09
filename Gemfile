@@ -1,9 +1,14 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
-group :production, :staging do
-  gem "pg"
+
+
+gem "pg"
+
+group :development do
+  gem 'sqlite3'
 end
+
 gem 'devise'
 gem 'activeadmin'
 gem 'thin'
