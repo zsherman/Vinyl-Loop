@@ -6,7 +6,7 @@ gem 'rails', '3.1.1'
 gem "pg"
 
 group :development do
-  gem 'sqlite3'
+
 end
 
 gem 'devise'
