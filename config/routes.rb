@@ -1,5 +1,4 @@
 Saas::Application.routes.draw do
-  break if ARGV.join.include? 'assets:precompile'
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
