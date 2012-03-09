@@ -25,3 +25,5 @@ gem 'stripe'
 gem 'rack', '1.3.3'
 
 gem 'hominid'
+
+gem 'taps'
