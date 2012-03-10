@@ -27,6 +27,6 @@ class PagesController < ApplicationController
    def stripe_event
      event_json = JSON.parse(request.body.read)
      Rails.logger.info(params.inspect)
-     logger.info "event_json"
+     render :nothing => true
    end
 end
