@@ -23,4 +23,10 @@ class PagesController < ApplicationController
    def dashboard
      @title = "Dashboard"
    end
+   
+   def stripe_event
+     event_json = JSON.parse(request.body.read)
+     Rails.logger.info(params.inspect)
+     logger.info "event_json"
+   end
 end
