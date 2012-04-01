@@ -173,6 +173,21 @@ h2 {
 	margin-top: 5%;
 }
 
+#notice_section {
+	float: left;
+	width: 705px;
+	height: 100px;
+	background: black;
+	margin-top: 50px;
+	opacity: .90;
+	-moz-border-radius:    5px;
+	-webkit-border-radius: 5px;
+	border-radius:         5px;
+	margin-left: 10px;
+	margin-top: 10px;
+	padding: 5px;
+}
+
 
 
 
